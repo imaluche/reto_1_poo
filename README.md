@@ -1,2 +1,2 @@
-# reto-1_poo
+# reto1_poo
 Reto 1: Repaso programacion estructurada

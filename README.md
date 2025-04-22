@@ -14,7 +14,7 @@ def oper(a,b,o): #definimos la funcion con 3 entradas. Los dos operandos y el op
         return a * b
     if o == '/':
         return a / b
-    # definimos una funcion que reconozca los simbolos de cada operador para hacer la operacion deseada
+    # la variable o permite que la funcion reconozca directamente los simbolos de cada operador para hacer la operacion deseada
 if __name__=="__main__":
     num1=float(input("primer operando: "))
     num2=float(input("segundo operando: "))
@@ -23,8 +23,9 @@ if __name__=="__main__":
     print("el resultado es "+ str(oper(num1,num2,opera)))
 ```
 #### explicacion:
-- Definimos una funcion para realizar una y otra operacion, para su funcionamiento adecuado se pedira como una de las entradas el simbolo del operador a utilizar
-- Dentro del codigo declaramos 3 variables que se ingresaran a la funcion, estas variables se ingresaran por teclado y definiran los operandos y la operacion
+- Definimos la funcion principal con 3 entradas que representen los valores a operar y el operador que se desea usar
+- Dentro de la funcion se evaluara el tipo de operador, dependiendo de cual sea se realizara una u otra operacion y se retornara el resultado
+- Dentro del codigo declaramos las 3 variables que se ingresaran a la funcion, estas variables se ingresaran por teclado y definiran los operandos y la operacion
 - Aplicamos la funcion y la imprimimos de forma que sea comprensible
 -----------------------------------
 ### 2. Realice una función que permita validar si una palabra es un palíndromo. Condición: No se vale hacer slicing para invertir la palabra y verificar que sea igual a la original.
@@ -53,10 +54,13 @@ if __name__ == '__main__':
 ```
 #### explicacion:
 - Definimos una funcion en la que ingrese una cadena de caracteres (la palabra que se evaluara)
-- Por medio de un evaluador identificamos si la palabra es par o impar, lo unico que cambia es el criterio para elegir la primera y segunda mitad
+- Dentro de la funcion declaramos un valor inicializado en cero a modo de iterador y dos listas en las cuales se ingresaran las mitades de la palabra ingresada
+- Por medio de bucle for se recorrera cada letra de la palabra
+- Con un evaluador identificaremos si la palabra es par o impar, lo unico que cambia es el criterio para elegir la primera y segunda mitad
 - En ambos casos se almacenaran las letras de la primera mitad de la palabra en una lista y las de la segunda mitad en otra
-- se compraran ambas listas ordenadas por medio de la funcion sorted con el fin de trabajar con elementos iguales en caso de ser palindromos
-- Dependiendo del caso se imprimira uno u otro resultado
+- Se compraran ambas listas ordenadas por medio de la funcion sorted con el fin de trabajar con elementos iguales en caso de ser palindromos
+- Dependiendo del resultado de esta comparacion se llegara a una u otra conclusion la cual se imprimira en la consola
+- Dentro del codigo declarararemos una variable ingresable por teclado para permitir al usuario ingresar la palabra a evaluar, hecho esto se aplicara la funcion en esta
 -----------------------------------
 ### 3. Escribir una función que reciba una lista de números y devuelva solo aquellos que son primos. La función debe recibir una lista de enteros y retornar solo aquellos que sean primos.
 ```python
@@ -85,10 +89,13 @@ if __name__=="__main__":
     primos(listado)
 ```
 #### explicacion:
-- Definimos una funcion en la cual se ingrese una lista
-- Dentro de la funcion recorremos cada valor de la lista el cual pasara por un ciclo while que lo dividira por todos los enteros desde 1 hasta el mismo
-- Por medio del operador de residuo se evaluara si la division nos devuelve un numero entero, pues los primos solo se pueden dividir por si mismos y por 1
-- En caso de que se cumpla la condicion descrita (y por tanto solo se hayan registrado 2 divisiones enteras) el numero se añadira a una nueva lista la cual se imprimira en la consola
+- Definimos una funcion a la cual se ingresara una dato de tipo lista
+- Dentro de la funcion por medio de un bucle for recorremos cada valor de la lista
+- cada uno de estos valores pasara por un ciclo while dentro del cual se realizara la operacion de residuo con un numero desde 1 hasta el mismo valor
+- Por medio de esta operacion podremos saber cuantas divisiones enteras tiene el valor evaluado
+- En caso de que cuente solamente con 2 (caso de todo numero primo) esta se añadira a una nueva lista la cual solo contendra numeros primos
+- Esta lista resultante se imprimira al final de la funcion de manera comprensible
+- Dentro del codigo declararemos una variable para elegir la cantidad de valores de la lista y se generara una lista contenida en una variable a la cual se le aplicara la funcion
 -----------------------------------
 
 ### 4. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
@@ -105,10 +112,10 @@ if __name__=="__main__":
 ### explicacion:
 - Importamos la primera funcion del punto anterior para generar listas
 - Definimos una funcion a la cual ingrese un dato del tipo lista
-- Dentro de la funcion se usara el metodo .sort para organizar la lista, pero en este caso se definira la variable "reverse" como verdadera con el fin de que se organize de mayor a menor
+- Dentro de la funcion se usara el metodo .sort para organizar la lista, pero en este caso se definira la variable "reverse" como verdadera con el fin de que se organize de mayor a menor en orden lexicografico
 - Hecho esto simplemente se suman los dos primeros valores de la lista, los cuales debido a la manera en la que se ordenaron siempre seran los dos mayores
 - La funcion acabara imprimiendo el resultado de forma comprensible
-- Dentro del codigo declaramos las variables que permitan al usuario decidir cuantos valores conformaran la lista 
+- Dentro del codigo declaramos las variables que permitan al usuario decidir cuantos valores conformaran la lista y se aplicara la funcion en la lista generada 
 -----------------------------------
 ### 5. Escribir una función que reciba una lista de string y retorne unicamente aquellos elementos que tengan los mismos caracteres.
 ```python
@@ -135,5 +142,6 @@ if __name__=="__main__":
 - Definimos una funcion que permita generar listas compuestas unicamente por strings (el unico cambio que realiza es no convertir el dato ingresado por teclado a flotante)
 - Definimos una funcion a la cual ingresen unicamente listas
 - dentro de la funcion recorreremos la lista de tal forma que con un segundo ciclo for se compare cada palabra con todas las demas que le siguen en la lista
-- en caso de que al organizarse con la funcion sorted ambas palabran sean iguales estas se añadiran a una lista fina
-- esta lista final se imprimira de forma que su informacion sea comprensible para el usuario
+- en caso de que al organizarse con la funcion sorted ambas palabran sean iguales estas se añadiran a una lista resultante
+- La lista resultante se imprimira de forma que su informacion sea comprensible para el usuario
+- Dentro del codigo se aplica la funcion en una lista generada por el usuario
